@@ -1,7 +1,78 @@
-<p><!DOCTYPE html> <html lang=&quot;en&quot;> <head>  <meta charset=&quot;UTF-8&quot;>  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>  <title>How Much I Miss You</title>  <style>  body {  font-family: 'Arial', sans-serif;  text-align: center;  margin: 0;  padding: 0;  height: 100vh;  display: flex;  justify-content: center;  align-items: center;  background-image: url('background.jpg'); /* Add your background image here */  background-size: cover;  background-position: center;  background-attachment: fixed;  }  .container {  background: rgba(255, 255, 255, 0.9);  padding: 30px;  border-radius: 15px;  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);  max-width: 400px;  width: 100%;  }  h2 {  color: #d63384;  margin-bottom: 20px;  }  #meter {  width: 100%;  margin: 20px 0;  cursor: pointer;  }  .progress-bar {  width: 100%;  height: 10px;  background: #e0e0e0;  border-radius: 5px;  overflow: hidden;  margin: 10px 0;  }  .progress {  height: 100%;  background: linear-gradient(90deg, #ff6f61, #ff3b3f);  width: 0;  transition: width 0.3s ease;  }  .heart {  font-size: 60px;  color: #ff3b3f;  transition: transform 0.5s, opacity 0.5s;  animation: pulse 1.5s infinite;  }  @keyframes pulse {  0% { transform: scale(1); }  50% { transform: scale(1.1); }  100% { transform: scale(1); }  }  #sweetMessage {  display: none;  font-size: 18px;  color: #d63384;  margin-top: 20px;  opacity: 0;  animation: fadeIn 1s ease forwards;  }  @keyframes fadeIn {  to { opacity: 1; }  }  </style> </head> <body>  <div class=&quot;container&quot;>  <h2>How Much I Miss You, Lulu &#55357;&#56470;</h2>  <input type=&quot;range&quot; id=&quot;meter&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;0&quot; oninput=&quot;updateLove()&quot;>  <div class=&quot;progress-bar&quot;>  <div class=&quot;progress&quot; id=&quot;progress&quot;></div>  </div>  <h3 id=&quot;message&quot;>Move the slider to find out!</h3>  <div class=&quot;heart&quot; id=&quot;heart&quot;>&#10084;&#65039;</div>  <p id=&quot;sweetMessage&quot;>  From the moment our paths crossed, my heart found its home in you. Every day without you feels like a page missing from my story. I cherish the memories we&rsquo;ve made and hold onto the hope of creating more. You are my forever, my always, and my everything. I love you endlessly, my little princess. &#55357;&#56470; </p>  </div></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Much I Miss You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            transition: background 0.5s ease-in-out;
+            padding: 50px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        #meter {
+            width: 100%;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+            transition: transform 0.5s;
+        }
+        #sweetMessage {
+            display: none;
+            font-size: 18px;
+            color: #d63384;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body id="background">
+    <div class="container">
+        <h2>How Much I Miss You, Lulu 💖</h2>
+        <input type="range" id="meter" min="0" max="100" value="0" oninput="updateLove()">
+        <h3 id="message">Move the slider to find out!</h3>
+        <div class="heart" id="heart">❤️</div>
+        <p id="sweetMessage">From the moment we met in OW, my heart has been yours. No matter what’s happened, my love for you has never changed, and I don’t think it ever will. I miss you more than words can say, and even if you’re unsure of what the future holds, I’ll always be here, waiting and hoping that one day you’ll find your way back to me. As I want you to be my wife, if there is anything I can do, just name it, and I’ll do whatever it takes to be in your life again. No matter what, my love will always be yours. 💖</p>
+    </div>
 
-<p> <script>  function updateLove() {  let meter = document.getElementById(&quot;meter&quot;).value;  let message = document.getElementById(&quot;message&quot;);  let heart = document.getElementById(&quot;heart&quot;);  let sweetMessage = document.getElementById(&quot;sweetMessage&quot;);  let progress = document.getElementById(&quot;progress&quot;);</p>
+    <script>
+        function updateLove() {
+            let meter = document.getElementById("meter").value;
+            let message = document.getElementById("message");
+            let heart = document.getElementById("heart");
+            let sweetMessage = document.getElementById("sweetMessage");
+            let background = document.getElementById("background");
 
-<p> // Update progress bar width  progress.style.width = meter + &quot;%&quot;;</p>
-
-<p> if (meter < 20) {  message.innerText = &quot;I miss you just a little... but it's growing!&quot;;  sweetMessage.style.display = &quot;none&quot;;  heart.style.animation = &quot;none&quot;;  } else if (meter < 50) {  message.innerText = &quot;Okay, I really miss you now!&quot;;  sweetMessage.style.display = &quot;none&quot;;  heart.style.animation = &quot;none&quot;;  } else if (meter < 80) {  message.innerText = &quot;I miss you A LOT. Like, A LOT a lot!&quot;;  sweetMessage.style.display = &quot;none&quot;;  heart.style.animation = &quot;none&quot;;  } else {  message.innerText = &quot;MAXIMUM MISS MODE ACTIVATED! &#55357;&#56469;&quot;;  heart.style.animation = &quot;pulse 1.5s infinite&quot;;  sweetMessage.style.display = &quot;block&quot;;  sweetMessage.style.opacity = &quot;1&quot;;  }  }  </script> </body> </html></p>
+            if (meter < 20) {
+                message.innerText = "I miss you just a little... but it's growing!";
+                background.style.backgroundImage = "url('/mnt/data/B6083F73-6F8F-4BA0-AAAB-FFFDE3A5ECBC.jpeg')";
+                sweetMessage.style.display = "none";
+            } else if (meter < 50) {
+                message.innerText = "Okay, I really miss you now!";
+                background.style.backgroundImage = "url('/mnt/data/3BA4D53B-CB2B-45E7-A294-FF42A3F35EFA.jpeg')";
+                sweetMessage.style.display = "none";
+            } else if (meter < 80) {
+                message.innerText = "I miss you A LOT. Like, A LOT a lot!";
+                background.style.backgroundImage = "url('/mnt/data/8E523D25-0D25-44D1-B0BD-93E43CFADCE8.jpeg')";
+                sweetMessage.style.display = "none";
+            } else {
+                message.innerText = "MAXIMUM MISS MODE ACTIVATED! 💕";
+                heart.style.transform = "scale(1.5)";
+                sweetMessage.style.display = "block";
+                background.style.backgroundImage = "url('/mnt/data/E5DE916B-3EE1-4C2C-B8DA-2475554E7DDC.jpeg')";
+            }
+        }
+    </script>
+</body>
+</html>
